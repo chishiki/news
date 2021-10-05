@@ -26,9 +26,17 @@ final class NewsViewController {
 		$errors = $this->errors;
 		$messages = $this->messages;
 
-		if ($loc[0] == 'news') {
+		switch($loc[1]) {
 
-			$v = new NewsMainViewController($loc, $input, $modules, $errors, $messages);
+			case 'test':
+
+				$v = new NewsTestViewController($loc, $input, $modules, $errors, $messages);
+				break;
+
+			default:
+
+				$v = new NewsMainViewController($loc, $input, $modules, $errors, $messages);
+
 
 		}
 
