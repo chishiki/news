@@ -24,9 +24,16 @@ final class NewsController implements StateControllerInterface {
 		$input = $this->input;
 		$modules = $this->modules;
 
-		if ($this->loc[0] == 'news') {
+		switch($loc[1]) {
 
-			$controller = new NewsMainController($loc,$input,$modules);
+			case 'admin':
+
+				$controller = new NewsAdminController($loc,$input,$modules);
+				break;
+
+			default:
+
+				$controller = new NewsMainController($loc,$input,$modules);
 
 		}
 

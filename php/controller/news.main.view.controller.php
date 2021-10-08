@@ -1,6 +1,6 @@
 <?php
 
-final class NewsTestViewController implements ViewControllerInterface {
+final class NewsMainViewController implements ViewControllerInterface {
 
 	private $loc;
 	private $input;
@@ -19,15 +19,6 @@ final class NewsTestViewController implements ViewControllerInterface {
 	}
 
 	public function getView() {
-
-		$loc = $this->loc;
-
-		if ($loc[0] == 'news' && $loc[1] == 'test') {
-
-			$view = new NewsTestView($this->loc, $this->input, $this->modules, $this->errors, $this->messages);
-			return $view->newsTestView();
-
-		}
 
 	}
 

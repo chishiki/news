@@ -1,6 +1,6 @@
 <?php
 
-final class NewsViewController {
+final class NewsViewController implements ViewControllerInterface {
 
 	private $loc;
 	private $input;
@@ -27,6 +27,11 @@ final class NewsViewController {
 		$messages = $this->messages;
 
 		switch($loc[1]) {
+
+			case 'admin':
+
+				$v = new NewsAdminViewController($loc, $input, $modules, $errors, $messages);
+				break;
 
 			case 'test':
 

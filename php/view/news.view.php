@@ -26,7 +26,7 @@ final class NewsView {
 
 			<div class="row">
 				<div class="col-12 col-sm-6 offset-sm-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10">
-					<a href="/' . Lang::prefix() . 'news/create/" class="btn btn-block btn-outline-success">' . Lang::getLang('create') . '</a>
+					<a href="/' . Lang::prefix() . 'news/admin/create/" class="btn btn-block btn-outline-success">' . Lang::getLang('create') . '</a>
 				</div>
 			</div>
 
@@ -65,7 +65,7 @@ final class NewsView {
 
 		$form = '
 
-			<form method="post" action="/' . Lang::prefix() . 'news/' . $type . '/' . ($newsID?$newsID.'/':'') . '">
+			<form method="post" action="/' . Lang::prefix() . 'news/admin/' . $type . '/' . ($newsID?$newsID.'/':'') . '">
 				
 				' . ($newsID?'<input type="hidden" name="newsID" value="' . $newsID . '">':'') . '
 			
@@ -151,7 +151,7 @@ final class NewsView {
 				<div class="form-row">
 				
 					<div class="form-group col-12 col-sm-4 col-md-3">
-						<a href="/' . Lang::prefix() . 'news/" class="btn btn-block btn-outline-secondary" role="button">' . Lang::getLang('returnToList') . '</a>
+						<a href="/' . Lang::prefix() . 'news/admin/" class="btn btn-block btn-outline-secondary" role="button">' . Lang::getLang('returnToList') . '</a>
 					</div>
 					
 					<div class="form-group col-12 col-sm-4 col-md-3 offset-md-3">
@@ -159,7 +159,7 @@ final class NewsView {
 					</div>
 					
 					<div class="form-group col-12 col-sm-4 col-md-3">
-						<a href="/' . Lang::prefix() . 'news/" class="btn btn-block btn-outline-secondary" role="button">' . Lang::getLang('cancel') . '</a>
+						<a href="/' . Lang::prefix() . 'news/admin/" class="btn btn-block btn-outline-secondary" role="button">' . Lang::getLang('cancel') . '</a>
 					</div>
 					
 				</div>
@@ -180,7 +180,7 @@ final class NewsView {
 
 		$form = '
 
-			<form id="news_form_delete" method="post" action="/' . Lang::prefix() . 'news/delete/' . $newsID . '/">
+			<form id="news_form_delete" method="post" action="/' . Lang::prefix() . 'news/admin/delete/' . $newsID . '/">
 				
 				<input type="hidden" name="newsID" value="' . $newsID . '">
 
@@ -231,7 +231,7 @@ final class NewsView {
 					</div>
 					
 					<div class="form-group col-6 col-md-3">
-						<a href="/' . Lang::prefix() . 'news/" class="btn btn-block btn-outline-secondary" role="button">' . Lang::getLang('cancel') . '</a>
+						<a href="/' . Lang::prefix() . 'news/admin/" class="btn btn-block btn-outline-secondary" role="button">' . Lang::getLang('cancel') . '</a>
 					</div>
 					
 				</div>
@@ -256,7 +256,7 @@ final class NewsView {
 		foreach ($newsItems AS $newsID) {
 			$news = new News($newsID);
 			$newsList .= '
-				<div class="news-list-item row clickable" data-url="/' . Lang::prefix() . 'news/' . $news->newsURL . '/">
+				<div class="news-list-item row clickable" data-url="/' . Lang::prefix() . 'news/admin/' . $news->newsURL . '/">
 					<div class="news-list-item-date col-12 col-md-3 col-lg-2">' . $news->newsDate . '</div>
 					<div class="news-list-item-title col-12 col-md-9 col-lg-10">' . $news->newsTitle() . '</a></div>
 				</div>
@@ -308,8 +308,8 @@ final class NewsView {
 					<td class="text-center">' . $news->newsDate . '</td>
 					<td class="text-left">' . $news->newsTitle() . '</td>
 					<td class="text-center text-nowrap">
-						<a href="/' . Lang::prefix() . 'news/update/' . $newsID . '/" class="btn btn-sm btn-outline-primary">' . Lang::getLang('update') . '</a>
-						<a href="/' . Lang::prefix() . 'news/confirm-delete/' . $newsID . '/" class="btn btn-sm btn-outline-danger">' . Lang::getLang('delete') . '</a>
+						<a href="/' . Lang::prefix() . 'news/admin/update/' . $newsID . '/" class="btn btn-sm btn-outline-primary">' . Lang::getLang('update') . '</a>
+						<a href="/' . Lang::prefix() . 'news/admin/confirm-delete/' . $newsID . '/" class="btn btn-sm btn-outline-danger">' . Lang::getLang('delete') . '</a>
 					</td>
 				</tr>
 			';
