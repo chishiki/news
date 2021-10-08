@@ -20,6 +20,16 @@ final class NewsMainViewController implements ViewControllerInterface {
 
 	public function getView() {
 
+		if ($this->loc[0] == 'news' && !empty($this->loc[1])) {
+
+			$newsID = NewsUtilities::getNewsWithURL($this->loc[1]);
+			if (!is_null($newsID)) {
+				$view = new NewsView();
+				return $view->newsView($newsID);
+			}
+
+		}
+
 	}
 
 }

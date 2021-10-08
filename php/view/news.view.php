@@ -256,7 +256,7 @@ final class NewsView {
 		foreach ($newsItems AS $newsID) {
 			$news = new News($newsID);
 			$newsList .= '
-				<div class="news-list-item row clickable" data-url="/' . Lang::prefix() . 'news/admin/' . $news->newsURL . '/">
+				<div class="news-list-item row clickable" data-url="/' . Lang::prefix() . 'news/' . $news->newsURL . '/">
 					<div class="news-list-item-date col-12 col-md-3 col-lg-2">' . $news->newsDate . '</div>
 					<div class="news-list-item-title col-12 col-md-9 col-lg-10">' . $news->newsTitle() . '</a></div>
 				</div>
@@ -272,22 +272,11 @@ final class NewsView {
 	public function newsView($newsID) {
 
 		$news = new News($newsID);
-
-		$article = '
-		
-			<div class="news-article-view container-fluid">
-				<div class="row">
-					<div class="col-12">
-						<h1 class="news-h">' . $news->newsTitle() . '</h1>
-						<span class="d-block"><small>' . $news->newsDate . '</small></span>
-						<p' . nl2br(htmlentities($news->newsContent()),true) . '</p>
-					</div>
-				</div>
-			</div>
-		
-		';
-
-		return $article;
+		$newsContent = nl2br(htmlentities($news->newsContent()),true);
+		$newsDate = $news->newsTitle();
+		$title = $news->newsTitle();
+		$card = new CardView('news_view_'.$newsID, array('container-fluid'), $newsDate, array('col-12'), $title, $newsContent, false);
+		return $card->card();
 
 	}
 
