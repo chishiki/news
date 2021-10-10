@@ -18,6 +18,12 @@ REPLACE INTO perihelion_Lang VALUES ('newsUrlAlreadyUsedByAnotherNewsItem', 'URL
 REPLACE INTO perihelion_Lang VALUES ('newsUrlMustBeSet', 'The URL must be set.', 0, 'URLの入力は必須です。', 0, @now);
 REPLACE INTO perihelion_Lang VALUES ('newsURL', 'URL', 0, 'URL', 0, @now);
 REPLACE INTO perihelion_Lang VALUES ('newsDate', 'Date', 0, '日付', 0, @now);
+REPLACE INTO perihelion_Lang VALUES ('newsUpdate', 'News Update', 0, 'ニュース更新', 0, @now);
+REPLACE INTO perihelion_Lang VALUES ('newsCreate', 'News Create', 0, 'ニュース新規作成', 0, @now);
+REPLACE INTO perihelion_Lang VALUES ('newsList', 'News List', 0, 'ニュース一覧', 0, @now);
+REPLACE INTO perihelion_Lang VALUES ('newsID', 'ID', 0, 'ID', 0, @now);
+REPLACE INTO perihelion_Lang VALUES ('alphanumericHyphenOnly', 'Alphanumeric and Hyphens only', 0, '英数字とハイフンのみ', 0, @now);
+REPLACE INTO perihelion_Lang VALUES ('onlyAlphanumericAndHyphenInputAreAllowedInTheUrlField', 'Only alphanumeric characters and hyphens are allowed in the URL field.', 0, 'URLには英数字とハイフンしか入力出来ないです。', 0, @now);
 
 -- REPLACE INTO perihelion_Lang VALUES ('xxxxxxx', 'xxxxxxx', 0, 'xxxxxxx', 0, @now);
 
