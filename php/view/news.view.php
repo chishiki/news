@@ -135,10 +135,12 @@ final class NewsView {
 				
 				<div class="form-row">
 				
-					<div class="form-group col-12 col-sm-8 col-md-6">
+					<div class="form-group col-12 col-xl-8">
 						<label for="newsURL">' . Lang::getLang('newsURL') . ' (' . Lang::getLang('alphanumericHyphenOnly') . ')</label>
 						<div class="input-group">
-							<div class="input-group-prepend"><div class="input-group-text"><!--http://' . $site->siteURL . '/' . Lang::prefix() . 'news-->/</div></div>
+							<div class="input-group-prepend">
+								<div class="input-group-text"><span class="d-none d-md-inline">https://' . $site->siteURL . '</span>/' . Lang::prefix() . 'news/</div>
+							</div>
 							<input type="text" class="form-control" name="newsURL" value="' . $news->newsURL . '" required>
 							<div class="input-group-append"><div class="input-group-text">/</div></div>
 						</div>
