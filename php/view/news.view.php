@@ -275,9 +275,8 @@ final class NewsView {
 
 		$news = new News($newsID);
 		$newsContent = nl2br(htmlentities($news->newsContent()),true);
-		$newsDate = $news->newsTitle();
 		$title = $news->newsTitle();
-		$card = new CardView('news_view_'.$newsID, array('container-fluid'), $newsDate, array('col-12'), $title, $newsContent, false);
+		$card = new CardView('news_view_'.$newsID, array('container-fluid'), '', array('col-12'), $title, $newsContent, false);
 		return $card->card();
 
 	}
